@@ -2,9 +2,7 @@
 import { defineConfig } from 'umi';
 import defaultSettings from './defaultSettings';
 import proxy from './proxy';
-
 const { REACT_APP_ENV } = process.env;
-
 export default defineConfig({
   hash: true,
   antd: {},
@@ -57,26 +55,30 @@ export default defineConfig({
               component: './Welcome',
             },
             {
-              path: '/admin',
-              name: 'admin',
-              icon: 'crown',
-              component: './Admin',
-              authority: ['admin'],
-              routes: [
-                {
-                  path: '/admin/sub-page',
-                  name: 'sub-page',
-                  icon: 'smile',
-                  component: './Welcome',
-                  authority: ['admin'],
-                },
-              ],
+              name: 'ocean.page-add',
+              icon: 'smile',
+              path: '/page/add',
+              component: './page-add',
+              hideInMenu: true
             },
             {
-              name: 'list.table-list',
-              icon: 'table',
-              path: '/list',
-              component: './ListTableList',
+              name: 'ocean.page-edit',
+              icon: 'smile',
+              path: '/page/edit',
+              component: './page-add',
+              hideInMenu: true
+            },
+            {
+              name: 'ocean.page',
+              icon: 'smile',
+              path: '/page',
+              component: './page',
+            },
+            {
+              name: 'ocean.module',
+              icon: 'smile',
+              path: '/module',
+              component: './module',
             },
             {
               component: './404',
