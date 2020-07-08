@@ -1,11 +1,11 @@
 import React from 'react';
 import { Button } from 'antd'
-import { Router, Route, routerRedux } from 'dva/router'
+import { history } from 'umi'
 
 export default () => {
     return (
         <Button type="primary" onClick={() => {
-            console.log('routerRedux',  Router, Route, routerRedux)
+            history.push('/page/add')
         }}>新增页面</Button>
     );
 }
